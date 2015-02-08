@@ -21,6 +21,11 @@
 //  SOFTWARE.
 #ifndef __SDL_DisplayList_DisplayObjectContainer__
 #define __SDL_DisplayList_DisplayObjectContainer__
-
+class DisplayObjectContainer
+{
+public:
+	DisplayObjectContainer();
+	~DisplayObjectContainer();
+};
 
 #endif // defined(__SDL_DisplayList_DisplayObjectContainer__)

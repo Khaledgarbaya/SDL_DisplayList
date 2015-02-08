@@ -21,8 +21,11 @@
 //  SOFTWARE.
 #ifndef __SDL_DisplayList_Point__
 #define __SDL_DisplayList_Point__
-class Point{
-
+class Point
+{
+public:
+	Point();
+	~Point();
 };
 
 

@@ -33,58 +33,72 @@ Rectangle *Rectangle::clone() const
     return new Rectangle(*this);
 }
 
-bool Rectangle::contains(float x, float y) {
+bool Rectangle::contains(float x, float y) 
+{
     return false;
 }
 
-bool Rectangle::containsPoint(const Point &point) {
+bool Rectangle::containsPoint(const Point &point) 
+{
     return false;
 }
 
-void Rectangle::copyFrom(const Rectangle &rect) {
+void Rectangle::copyFrom(const Rectangle &rect) 
+{
 
 }
 
-bool Rectangle::equals(const Rectangle &toCompare) {
+bool Rectangle::equals(const Rectangle &toCompare) 
+{
     return false;
 }
 
-void Rectangle::inflate(float dx, float dy) {
+void Rectangle::inflate(float dx, float dy) 
+{
 
 }
 
-void Rectangle::inflatePoint(const Point &point) {
+void Rectangle::inflatePoint(const Point &point) 
+{
 
 }
 
-Rectangle Rectangle::intersection(const Rectangle &toIntersect) const {
+Rectangle Rectangle::intersection(const Rectangle &toIntersect) const 
+{
     return Rectangle(0, 0, 0, 0);
 }
 
-bool Rectangle::isEmpty() {
+bool Rectangle::isEmpty() 
+{
     return false;
 }
 
-void Rectangle::offset(float dx, float dy) {
+void Rectangle::offset(float dx, float dy) 
+{
 
 }
 
-void Rectangle::offsetPoint(const Point &point) {
+void Rectangle::offsetPoint(const Point &point) 
+{
 
 }
 
-void Rectangle::setEmpty() {
+void Rectangle::setEmpty() 
+{
 
 }
 
-void Rectangle::setTo(float x, float y, float width, float height) {
+void Rectangle::setTo(float x, float y, float width, float height) 
+{
 
 }
 
-std::string Rectangle::toString() {
+std::string Rectangle::toString() 
+{
     return "";
 }
 
-Rectangle *Rectangle::unionWith(const Rectangle &toUnion) {
+Rectangle *Rectangle::unionWith(const Rectangle &toUnion) 
+{
     return nullptr;
 }
