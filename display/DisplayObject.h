@@ -22,86 +22,94 @@
 #ifndef __SDL_DisplayList_DisplayObject__
 #define __SDL_DisplayList_DisplayObject__
 
-class  DisplayObject{
-public:
+class  DisplayObject
+{
+    public:
 
-    DisplayObject();
+        ~DisplayObject() 
+        {
+        }
+        string name;
+        float getX() const 
+        {
+            return x;
+        }
 
-    ~DisplayObject() {
-    }
+        void setX(float x) 
+        {
+            DisplayObject::x = x;
+        }
 
-    float getX() const {
-        return x;
-    }
+        float getY() const 
+        {
+            return y;
+        }
 
-    void setX(float x) {
-        DisplayObject::x = x;
-    }
+        void setY(float y) 
+        {
+            DisplayObject::y = y;
+        }
 
-    float getY() const {
-        return y;
-    }
+        float getWidth() const 
+        {
+            return width;
+        }
 
-    void setY(float y) {
-        DisplayObject::y = y;
-    }
+        void setWidth(float width) 
+        {
+            DisplayObject::width = width;
+        }
 
-    float getWidth() const {
-        return width;
-    }
+        float getHeight() const 
+        {
+            return height;
+        }
 
-    void setWidth(float width) {
-        DisplayObject::width = width;
-    }
+        void setHeight(float height) 
+        {
+            DisplayObject::height = height;
+        }
 
-    float getHeight() const {
-        return height;
-    }
+        float getRotation() const 
+        {
+            return rotationX;
+        }
 
-    void setHeight(float height) {
-        DisplayObject::height = height;
-    }
+        void setRotation(float rotationX) 
+        {
+            DisplayObject::rotationX = rotationX;
+        }
 
-    float getRotationX() const {
-        return rotationX;
-    }
+        float getScaleX() const 
+        {
+            return scaleX;
+        }
 
-    void setRotationX(float rotationX) {
-        DisplayObject::rotationX = rotationX;
-    }
+        void setScaleX(float scaleX) 
+        {
+            DisplayObject::scaleX = scaleX;
+        }
 
-    float getRotationY() const {
-        return rotationY;
-    }
+        float getScaleY() const 
+        {
+            return ScaleY;
+        }
 
-    void setRotationY(float rotationY) {
-        DisplayObject::rotationY = rotationY;
-    }
+        void setScaleY(float ScaleY) 
+        {
+            DisplayObject::ScaleY = ScaleY;
+        }
+    protected:
+        DisplayObject();
 
-    float getScaleX() const {
-        return scaleX;
-    }
+        float x, y;
 
-    void setScaleX(float scaleX) {
-        DisplayObject::scaleX = scaleX;
-    }
+        float width, height;
 
-    float getScaleY() const {
-        return ScaleY;
-    }
+        float rotation;
 
-    void setScaleY(float ScaleY) {
-        DisplayObject::ScaleY = ScaleY;
-    }
+        float scaleX, ScaleY;
 
-private:
-
-    float x, y;
-
-    float width, height;
-
-    float rotationX, rotationY;
-
-    float scaleX, ScaleY;
+        void draw(SDL_Renderer* pRenderer);
 };
 #endif // defined(__SDL_DisplayList_DisplayObject__)

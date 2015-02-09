@@ -21,11 +21,19 @@
 //  SOFTWARE.
 #ifndef __SDL_DisplayList_DisplayObjectContainer__
 #define __SDL_DisplayList_DisplayObjectContainer__
-class DisplayObjectContainer
-{
+
+class DisplayObjectContainer : public DisplayObject
+{	
 public:
 	DisplayObjectContainer();
 	~DisplayObjectContainer();
+	void addChild(const DisplayObject &child);
+	void addChildAt(const DisplayObject &child, int atIndex);
+	
+	void removeChild(const DisplayObject &child);
+	void removeChildAt(int atIndex);
+
+	DisplayObject & getChildAt(int atIndex) const;
 };
 
 #endif // defined(__SDL_DisplayList_DisplayObjectContainer__)
