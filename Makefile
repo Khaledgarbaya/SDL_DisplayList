@@ -6,7 +6,7 @@ OBJ = $(SRC:.cpp=.o)
 OUT = ../libutils.a
 
 # include directories
-INCLUDES = 
+INCLUDES = -I/usr/local/include 
 
 # C++ compiler flags (-g -O2 -Wall)
 CCFLAGS = -g
@@ -15,7 +15,7 @@ CCFLAGS = -g
 CCC = g++
 
 # library paths
-LIBS = -L../ -lm
+LIBS = -L../ -L/usr/local/lib -lm
 
 # compile flags
 LDFLAGS = -g
