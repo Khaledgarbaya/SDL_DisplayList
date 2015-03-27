@@ -1,5 +1,6 @@
 //
-//  Image.cpp
+//  DisplayObject.h
+//  author Khaled Garbaya http://khaledgarbaya.net
 //
 //  Copyright (c) 2015 Khaled Garbaya
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,3 +20,22 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
+#include "Image.h"
+#include <SDL/SDL.h>
+
+Image::Image(const string  &textureName)
+{
+
+}
+Image::Image(const SDL_Texture  &texture)
+{
+
+}
+Image::~Image()
+{
+  /// destroy the texture
+  if(m_texture)
+  {
+    SDL_DestroyTexture(m_texture);
+  }
+}
