@@ -95,7 +95,7 @@ void Rectangle::setTo(float x, float y, float width, float height)
 
 std::string Rectangle::toString() 
 {
-    return "";
+    return "[Object] Ractangle";
 }
 
 Rectangle *Rectangle::unionWith(const Rectangle &toUnion) 

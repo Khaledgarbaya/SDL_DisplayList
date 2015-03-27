@@ -1,5 +1,6 @@
 //
-//  Point.cpp
+//  DisplayObject.h
+//  author Khaled Garbaya http://khaledgarbaya.net
 //
 //  Copyright (c) 2015 Khaled Garbaya
 //  Permission is hereby granted, free of charge, to any person obtaining a copy

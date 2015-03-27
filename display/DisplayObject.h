@@ -1,5 +1,6 @@
 //
 //  DisplayObject.h
+//  author Khaled Garbaya http://khaledgarbaya.net
 //
 //  Copyright (c) 2015 Khaled Garbaya
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,6 +20,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
+
 #ifndef __SDL_DisplayList_DisplayObject__
 #define __SDL_DisplayList_DisplayObject__
 
@@ -26,76 +28,76 @@ class  DisplayObject
 {
     public:
 
-        ~DisplayObject() 
+        ~DisplayObject()
         {
         }
         string name;
-        float getX() const 
+        float getX() const
         {
             return x;
         }
 
-        void setX(float x) 
+        void setX(float x)
         {
             DisplayObject::x = x;
         }
 
-        float getY() const 
+        float getY() const
         {
             return y;
         }
 
-        void setY(float y) 
+        void setY(float y)
         {
             DisplayObject::y = y;
         }
 
-        float getWidth() const 
+        float getWidth() const
         {
             return width;
         }
 
-        void setWidth(float width) 
+        void setWidth(float width)
         {
             DisplayObject::width = width;
         }
 
-        float getHeight() const 
+        float getHeight() const
         {
             return height;
         }
 
-        void setHeight(float height) 
+        void setHeight(float height)
         {
             DisplayObject::height = height;
         }
 
-        float getRotation() const 
+        float getRotation() const
         {
             return rotationX;
         }
 
-        void setRotation(float rotationX) 
+        void setRotation(float rotationX)
         {
             DisplayObject::rotationX = rotationX;
         }
 
-        float getScaleX() const 
+        float getScaleX() const
         {
             return scaleX;
         }
 
-        void setScaleX(float scaleX) 
+        void setScaleX(float scaleX)
         {
             DisplayObject::scaleX = scaleX;
         }
 
-        float getScaleY() const 
+        float getScaleY() const
         {
             return ScaleY;
         }
 
-        void setScaleY(float ScaleY) 
+        void setScaleY(float ScaleY)
         {
             DisplayObject::ScaleY = ScaleY;
         }

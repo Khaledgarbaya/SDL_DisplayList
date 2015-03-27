@@ -1,5 +1,6 @@
 //
-//  DisplayObjectContainer.h
+//  DisplayObject.h
+//  author Khaled Garbaya http://khaledgarbaya.net
 //
 //  Copyright (c) 2015 Khaled Garbaya
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,17 +20,18 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
+
 #ifndef __SDL_DisplayList_DisplayObjectContainer__
 #define __SDL_DisplayList_DisplayObjectContainer__
 
 class DisplayObjectContainer : public DisplayObject
-{	
+{
 public:
 	DisplayObjectContainer();
 	~DisplayObjectContainer();
 	void addChild(const DisplayObject &child);
 	void addChildAt(const DisplayObject &child, int atIndex);
-	
+
 	void removeChild(const DisplayObject &child);
 	void removeChildAt(int atIndex);
 
