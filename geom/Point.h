@@ -27,6 +27,7 @@ class Point
 public:
 	Point();
 	~Point();
+	float x, y;
 };
 
 
