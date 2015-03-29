@@ -23,11 +23,11 @@
 #include "DisplayObject.h"
 
 DisplayObject::DisplayObject()
-        : x(0.0f),
-          y(0.0f),
-          width(0.0f),
-          height(0.0f),
-          rotation(0.0f),
-          scaleX(1.0f),
-          ScaleY(1.0f) {
+	: m_x(0.0f),
+	m_y(0.0f),
+	m_width(0.0f),
+	m_height(0.0f),
+	m_rotation(0.0f),
+	m_scaleX(1.0f),
+	m_scaleY(1.0f) {
 }

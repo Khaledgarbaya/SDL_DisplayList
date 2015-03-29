@@ -20,97 +20,98 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-
+#include <string>
+#include <SDL.h>
 #ifndef __SDL_DisplayList_DisplayObject__
 #define __SDL_DisplayList_DisplayObject__
 
 class  DisplayObject
 {
     public:
-
+		DisplayObject(){}
         ~DisplayObject()
         {
         }
-        string name;
+        std::string name;
         float getX() const
         {
-            return x;
+			return m_x;
         }
 
         void setX(float x)
         {
-            DisplayObject::x = x;
+			m_x = x;
         }
 
         float getY() const
         {
-            return y;
+			return m_y;
         }
 
         void setY(float y)
         {
-            DisplayObject::y = y;
+			m_y = y;
         }
 
         float getWidth() const
         {
-            return width;
+			return m_width;
         }
 
         void setWidth(float width)
         {
-            DisplayObject::width = width;
+			m_width = width;
         }
 
         float getHeight() const
         {
-            return height;
+			return m_height;
         }
 
         void setHeight(float height)
         {
-            DisplayObject::height = height;
+			m_height = height;
         }
 
         float getRotation() const
         {
-            return rotationX;
+			return m_rotation;
         }
 
         void setRotation(float rotationX)
         {
-            DisplayObject::rotationX = rotationX;
+			m_rotation = rotationX;
         }
 
         float getScaleX() const
         {
-            return scaleX;
+			return m_scaleX;
         }
 
         void setScaleX(float scaleX)
         {
-            DisplayObject::scaleX = scaleX;
+            m_scaleX = scaleX;
         }
 
         float getScaleY() const
         {
-            return ScaleY;
+			return m_scaleY;
         }
 
         void setScaleY(float ScaleY)
         {
-            DisplayObject::ScaleY = ScaleY;
+			DisplayObject::m_scaleY = ScaleY;
         }
     protected:
         DisplayObject();
 
-        float x, y;
+		float m_x, m_y;
 
-        float width, height;
+		float m_width, m_height;
 
-        float rotation;
+        float m_rotation;
 
-        float scaleX, ScaleY;
+		float m_scaleX, m_scaleY;
 
         void draw(SDL_Renderer* pRenderer);
 };

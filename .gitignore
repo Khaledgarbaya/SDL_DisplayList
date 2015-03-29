@@ -29,3 +29,9 @@
 
 #clion project
 *.idea
+*.vcxproj
+*.suo
+*.filters
+*.opensdf
+*.sln
+*.sdf

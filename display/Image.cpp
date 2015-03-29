@@ -21,20 +21,18 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 #include "Image.h"
-#include <SDL/SDL.h>
-
-Image::Image(const string  &textureName)
+Image::Image(const std::string  &textureName)
 {
-
+	m_textureName = textureName;
 }
-Image::Image(const SDL_Texture  &texture)
+Image::Image(SDL_Texture *texture)
 {
-
+	m_texture = texture;
 }
 Image::~Image()
 {
   /// destroy the texture
-  if(m_texture)
+  if(!m_texture)
   {
     SDL_DestroyTexture(m_texture);
   }

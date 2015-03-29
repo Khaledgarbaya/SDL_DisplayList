@@ -21,18 +21,17 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 #include "DisplayObject.h"
-
 #ifndef __SDL_DisplayList_Image__
 #define __SDL_DisplayList_Image__
 
 class Image : public DisplayObject
 {
 	private:
-		SDL_Texture &m_texture;
-		string &m_textureName;
+		SDL_Texture *m_texture;
+		std::string m_textureName;
 	public:
-		Image(const string  &textureName);
-		Image(const SDL_Texture  &texture);
+		Image(const std::string  &textureName);
+		Image(SDL_Texture *texture);
 		~Image();/// Cleanup here
 };
 
