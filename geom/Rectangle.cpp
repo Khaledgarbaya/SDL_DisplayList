@@ -21,7 +21,7 @@
 //  SOFTWARE.
 
 #include "Rectangle.h"
-
+#include <cmath>
 bool Rectangle::intersects(const Rectangle &rect)
 {
     return (this->x < rect.width && rect.width > rect.x &&
@@ -35,12 +35,13 @@ Rectangle *Rectangle::clone() const
 
 bool Rectangle::contains(float x, float y) 
 {
-    return false;
+	return (x < (this->x + (.5*this->width)) && x >(this->x - (.5*this->width)) &&
+		y < (this->y + (.5*this->height)) && y >(this->y - (.5*this->height)));	
 }
 
 bool Rectangle::containsPoint(const Point &point) 
 {
-    return false;
+    return contains(point.x, point.y);
 }
 
 void Rectangle::copyFrom(const Rectangle &rect) 
@@ -58,12 +59,15 @@ bool Rectangle::equals(const Rectangle &toCompare)
 
 void Rectangle::inflate(float dx, float dy) 
 {
-
+	this->x -= dx;
+	this->y -= dy;
+	this->width += 2 * dx;
+	this->height += 2 * dy;
 }
 
 void Rectangle::inflatePoint(const Point &point) 
 {
-
+	inflate(point.x, point.y);
 }
 
 Rectangle Rectangle::intersection(const Rectangle &toIntersect) const 
@@ -108,5 +112,10 @@ std::string Rectangle::toString()
 
 Rectangle *Rectangle::unionWith(const Rectangle &toUnion) 
 {
-    return nullptr;
+	int x1 = fmin(this->x, toUnion.x);
+	int x2 = fmax(this->x + this->width, toUnion.x + toUnion.width);
+	int y1 = fmin(this->y, toUnion.y);
+	int y2 = fmax(this->y + this->height, toUnion.y + toUnion.height);
+
+	return new Rectangle(x1, y1, x2 - x1, y2 - y1);
 }
