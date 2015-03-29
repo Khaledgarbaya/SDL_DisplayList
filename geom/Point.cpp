@@ -21,3 +21,13 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 #include "Point.h"
+
+Point::Point(float a_x = 0, float a_y = 0) : x(a_x), y(a_y)
+{
+
+}
+Point::~Point()
+{
+
+}
+

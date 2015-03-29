@@ -25,7 +25,7 @@
 class Point
 {
 public:
-	Point();
+	Point(float a_x = 0, float a_y = 0);
 	~Point();
 	float x, y;
 };
