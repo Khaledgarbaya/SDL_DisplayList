@@ -45,12 +45,15 @@ bool Rectangle::containsPoint(const Point &point)
 
 void Rectangle::copyFrom(const Rectangle &rect) 
 {
-
+	setTo(rect.x, rect.y, rect.width, rect.height);
 }
 
 bool Rectangle::equals(const Rectangle &toCompare) 
 {
-    return false;
+	return this->x == toCompare.x &&
+		   this->y == toCompare.y &&
+		   this->width == toCompare.width &&
+		   this->height == toCompare.height;
 }
 
 void Rectangle::inflate(float dx, float dy) 
@@ -70,27 +73,32 @@ Rectangle Rectangle::intersection(const Rectangle &toIntersect) const
 
 bool Rectangle::isEmpty() 
 {
-    return false;
+    return x == 0 && y==0 && width == 0 && height == 0;
 }
 
 void Rectangle::offset(float dx, float dy) 
 {
-
+	this->x += dx;
+	this->y += dy;
 }
 
 void Rectangle::offsetPoint(const Point &point) 
 {
-
+	this->x += point.x;
+	this->y += point.y;
 }
 
 void Rectangle::setEmpty() 
 {
-
+	x = 0; y = 0; width = 0; height = 0;
 }
 
 void Rectangle::setTo(float x, float y, float width, float height) 
 {
-
+	this->x = x;
+	this->y = y;
+	this->width = width;
+	this->height = height;
 }
 
 std::string Rectangle::toString() 

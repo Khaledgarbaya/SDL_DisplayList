@@ -47,6 +47,7 @@ public:
     std::string toString();
     Rectangle* unionWith(const Rectangle& toUnion);
     Point* bottomRight, topLeft;
+
     float top, right, bottom, left;
 
     float x, y;
