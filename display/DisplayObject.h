@@ -28,7 +28,7 @@
 class  DisplayObject
 {
     public:
-		DisplayObject(){}
+		    DisplayObject();
         ~DisplayObject()
         {
         }
@@ -103,7 +103,6 @@ class  DisplayObject
 			DisplayObject::m_scaleY = ScaleY;
         }
     protected:
-        DisplayObject();
 
 		float m_x, m_y;
 
