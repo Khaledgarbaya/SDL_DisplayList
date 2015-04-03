@@ -28,11 +28,8 @@
 class  DisplayObject
 {
     public:
-		    DisplayObject();
-        ~DisplayObject()
-        {
-        }
-        std::string name;
+		DisplayObject();
+		virtual ~DisplayObject() = 0;
         float getX() const
         {
 			return m_x;
@@ -103,6 +100,7 @@ class  DisplayObject
 			DisplayObject::m_scaleY = ScaleY;
         }
     protected:
+		std::string m_name;
 
 		float m_x, m_y;
 
@@ -112,6 +110,8 @@ class  DisplayObject
 
 		float m_scaleX, m_scaleY;
 
-        void draw(SDL_Renderer* pRenderer);
+        virtual void draw(SDL_Renderer* pRenderer) = 0;
+		virtual void update() = 0;
+		SDL_Rect m_destRect;
 };
 #endif // defined(__SDL_DisplayList_DisplayObject__)
