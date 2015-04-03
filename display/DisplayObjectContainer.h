@@ -20,6 +20,8 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
+#include <vector>
+#include <algorithm>
 #include "DisplayObject.h"
 #ifndef __SDL_DisplayList_DisplayObjectContainer__
 #define __SDL_DisplayList_DisplayObjectContainer__
@@ -29,13 +31,16 @@ class DisplayObjectContainer : public DisplayObject
 public:
 	DisplayObjectContainer();
 	~DisplayObjectContainer();
-	void addChild(const DisplayObject &child);
-	void addChildAt(const DisplayObject &child, int atIndex);
+	void addChild(DisplayObject *child);
+	void addChildAt(DisplayObject *child, int atIndex);
 
-	void removeChild(const DisplayObject &child);
+	void removeChild(const DisplayObject *child);
 	void removeChildAt(int atIndex);
 
 	DisplayObject & getChildAt(int atIndex) const;
+protected:
+	void moveToFront(std::vector<DisplayObject*>& list, std::vector<DisplayObject*>::iterator element);
+	std::vector<DisplayObject*> m_children;
 };
 
 #endif // defined(__SDL_DisplayList_DisplayObjectContainer__)

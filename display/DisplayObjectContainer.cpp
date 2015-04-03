@@ -20,3 +20,58 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
+#include "DisplayObjectContainer.h"
+DisplayObjectContainer::DisplayObjectContainer()
+{
+
+}
+DisplayObjectContainer::~DisplayObjectContainer()
+{
+	for (std::vector< DisplayObject* >::iterator it = m_children.begin(); it != m_children.end(); ++it)
+	{
+		delete (*it);
+	}
+	m_children.clear();
+}
+
+void DisplayObjectContainer::addChild(DisplayObject *pChild)
+{
+	/// check if the pChild is Already Added to the stage
+	auto it = std::find(m_children.begin(), m_children.end(), pChild);
+	if (it == m_children.end())
+	{
+		/// we don't have it yet do we add it as a child
+		m_children.push_back(pChild);
+	}
+	else
+	{
+		/// otherwise we bring to the front
+		moveToFront(m_children, it);
+	}
+}
+void DisplayObjectContainer::addChildAt(DisplayObject *child, int atIndex)
+{
+	/// TODO
+}
+void DisplayObjectContainer::removeChild(const DisplayObject *child)
+{
+	auto it = std::find(m_children.begin(), m_children.end(), child);
+	if (it != m_children.end())
+	{
+		m_children.erase(it);
+	}
+}
+void DisplayObjectContainer::removeChildAt(int atIndex)
+{
+	if (atIndex < m_children.size())
+	{
+		m_children.erase(m_children.begin() + atIndex);
+	}
+}
+
+void DisplayObjectContainer::moveToFront(std::vector<DisplayObject*>& list, std::vector<DisplayObject*>::iterator element)
+{
+	DisplayObject* tmp(*element);
+	std::copy_backward(list.begin(), std::prev(element), element);
+	*list.begin() = tmp;
+}
