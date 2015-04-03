@@ -30,9 +30,11 @@ class Image : public DisplayObject
 		SDL_Texture *m_texture;
 		std::string m_textureName;
 	public:
-		Image(const std::string  &textureName);
 		Image(SDL_Texture *texture);
 		~Image();/// Cleanup here
+protected:
+	void draw(SDL_Renderer* pRenderer);
+	virtual void update();
 };
 
 #endif // defined(__SDL_DisplayList_Image__)

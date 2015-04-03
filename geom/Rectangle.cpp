@@ -116,6 +116,5 @@ Rectangle *Rectangle::unionWith(const Rectangle &toUnion)
 	int x2 = fmax(this->x + this->width, toUnion.x + toUnion.width);
 	int y1 = fmin(this->y, toUnion.y);
 	int y2 = fmax(this->y + this->height, toUnion.y + toUnion.height);
-
 	return new Rectangle(x1, y1, x2 - x1, y2 - y1);
 }

@@ -21,10 +21,6 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 #include "Image.h"
-Image::Image(const std::string  &textureName)
-{
-	m_textureName = textureName;
-}
 Image::Image(SDL_Texture *texture)
 {
 	m_texture = texture;
@@ -36,4 +32,15 @@ Image::~Image()
   {
     SDL_DestroyTexture(m_texture);
   }
+}
+void Image::draw(SDL_Renderer* pRenderer)
+{
+	SDL_RenderCopy(pRenderer, m_texture, NULL, NULL);
+}
+void Image::update()
+{
+	m_destRect.x = m_x;
+	m_destRect.y = m_y;
+	m_destRect.w = m_width * m_scaleX;
+	m_destRect.h = m_height * m_scaleY;
 }
