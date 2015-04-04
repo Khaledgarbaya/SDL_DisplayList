@@ -35,6 +35,7 @@ Image::~Image()
 }
 void Image::draw(SDL_Renderer* pRenderer)
 {
+	/// TODO change this to SDL_RenderCopyEx to support rotation
 	SDL_RenderCopy(pRenderer, m_texture, NULL, NULL);
 }
 void Image::update()
