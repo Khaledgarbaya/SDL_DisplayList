@@ -37,6 +37,9 @@ public:
 	void removeChild(const DisplayObject *child);
 	void removeChildAt(int atIndex);
 
+	virtual void draw();
+	virtual void update();
+
 	DisplayObject & getChildAt(int atIndex) const;
 protected:
 	void moveToFront(std::vector<DisplayObject*>& list, std::vector<DisplayObject*>::iterator element);

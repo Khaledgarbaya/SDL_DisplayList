@@ -68,7 +68,24 @@ void DisplayObjectContainer::removeChildAt(int atIndex)
 		m_children.erase(m_children.begin() + atIndex);
 	}
 }
+void DisplayObjectContainer::draw(SDL_Renderer* pRenderer)
+{
+	/// loop through children pointers and call draw
+	for (auto it = m_children.begin(); it != m_children.end(); ++it)
+	{
+		it->draw(pRenderer);
+	}
+}
+void DisplayObjectContainer::update()
+{
+	/// loop through children pointers and call update
+	for (auto it = m_children.begin(); it != m_children.end(); ++it)
+	{
+		it->update();
+	}
+}
 
+/// Util
 void DisplayObjectContainer::moveToFront(std::vector<DisplayObject*>& list, std::vector<DisplayObject*>::iterator element)
 {
 	DisplayObject* tmp(*element);
