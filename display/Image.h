@@ -29,6 +29,8 @@ class Image : public DisplayObject
 	private:
 		SDL_Texture *m_texture;
 		std::string m_textureName;
+		SDL_Rect*   m_srcRect;
+		SDL_Rect*   m_dstRect;
 	public:
 		Image(SDL_Texture *texture);
 		~Image();/// Cleanup here

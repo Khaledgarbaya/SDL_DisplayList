@@ -24,6 +24,11 @@
 Image::Image(SDL_Texture *texture)
 {
 	m_texture = texture;
+	m_srcRect.x = 0;
+	m_srcRect.y = 0;
+	m_srcRect.w = m_texture.w;
+	m_srcRect.y = m_texture.h;
+
 }
 Image::~Image()
 {
@@ -35,13 +40,12 @@ Image::~Image()
 }
 void Image::draw(SDL_Renderer* pRenderer)
 {
-	/// TODO change this to SDL_RenderCopyEx to support rotation
-	SDL_RenderCopy(pRenderer, m_texture, NULL, NULL);
+	SDL_RenderCopyEx(pRenderer, m_texture, m_srcRect, m_destRect, m_rotation, NULL, SDL_FLIP_NONE);
 }
 void Image::update()
 {
-	m_destRect.x = m_x;
-	m_destRect.y = m_y;
-	m_destRect.w = m_width * m_scaleX;
-	m_destRect.h = m_height * m_scaleY;
+	m_dstRect.x = m_x;
+	m_dstRect.y = m_y;
+	m_dstRect.w = m_width  * m_scaleX;
+	m_dstRect.h = m_height * m_scaleY;
 }
