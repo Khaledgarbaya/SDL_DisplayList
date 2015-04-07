@@ -25,13 +25,14 @@
 #ifndef __SDL_DisplayList_MovieClip__
 #define __SDL_DisplayList_MovieClip__
 
-class Sprite : public DisplayObjectContainer
+class MovieClip : public DisplayObjectContainer
 {
 	private:
 		SDL_Texture *m_texture;
     std::vector<SDL_Texture*> m_textures;
     int m_fps;
 		std::string m_textureName;
+
 		SDL_Rect*   m_srcRect;
 		SDL_Rect*   m_dstRect;
 	public:
