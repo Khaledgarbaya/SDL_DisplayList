@@ -1,5 +1,5 @@
 //
-//  DisplayObject.h
+//  Image.cpp
 //  author Khaled Garbaya http://khaledgarbaya.net
 //
 //  Copyright (c) 2015 Khaled Garbaya
@@ -24,11 +24,11 @@
 Image::Image(SDL_Texture *texture)
 {
 	m_texture = texture;
+	/// we'll assume that the texture x and y start from 0
 	m_srcRect.x = 0;
 	m_srcRect.y = 0;
 	m_srcRect.w = m_texture.w;
 	m_srcRect.y = m_texture.h;
-
 }
 Image::~Image()
 {
