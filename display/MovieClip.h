@@ -30,6 +30,7 @@ class Sprite : public DisplayObjectContainer
 	private:
 		SDL_Texture *m_texture;
     std::vector<SDL_Texture*> m_textures;
+    int m_fps;
 		std::string m_textureName;
 		SDL_Rect*   m_srcRect;
 		SDL_Rect*   m_dstRect;
