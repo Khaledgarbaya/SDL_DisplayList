@@ -21,23 +21,51 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 #include <vector>
-#include "DisplayObjectContainer.h"
+#include "Image.h"
 #ifndef __SDL_DisplayList_MovieClip__
 #define __SDL_DisplayList_MovieClip__
 
-class MovieClip : public DisplayObjectContainer
+class MovieClip : public Image
 {
 	private:
 		SDL_Texture *m_texture;
     std::vector<SDL_Texture*> m_textures;
-    int m_fps;
-		std::string m_textureName;
-
 		SDL_Rect*   m_srcRect;
 		SDL_Rect*   m_dstRect;
+
+    std::vector<float> m_durations;
+    std::vector<float> m_startTimes;
+
+    int m_fps;
+    unsigned int m_currentFrame;
+
+    float m_defaultFrameDuration;
+    float m_currentTime;
+
+    bool  m_loop;
+    bool  m_playing;
+  private:
+    void         init(std::vector<SDL_Texture*> textures, float fps = 24);
 	public:
-    MovieClip(std::vector<SDL_Texture*> textures);
+    int          getFps() const{return m_fps;}
+    void         setFps(int fps){m_fps = fps;}
+
+    unsigned int getCurrentFrame() const{return m_currentFrame;}
+    void         setCurrentFrame(unsigned int frame){m_currentFrame = frame;}
+
+    MovieClip(std::vector<SDL_Texture*> textures, float fps = 24);
 		~MovieClip();/// Cleanup here
+
+    void         addFrame(SDL_Texture* texture, float duration = -1);
+    void         addFrameAt(int frameID, SDL_Texture* texture, float duration = -1);
+    void         removeFrameAt(int frameID);
+    SDL_Texture* getFrameTexture() const;
+    void         setFrameTexture(int frameID, SDL_Texture* texture);
+    float        getFrameDuration(int frameID) const;
+    void         setFrameDuration(int frameID, float duration);
+    void         play();
+    void         pause();
+    void         stop();
 };
 
 #endif // defined(__SDL_DisplayList_MovieClip__)

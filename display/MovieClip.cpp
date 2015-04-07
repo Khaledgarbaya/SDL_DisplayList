@@ -25,7 +25,8 @@
 MovieClip::MovieClip(std::vector<SDL_Texture*> textures, int fps = 24)
 {
   m_textures = textures;
-  m_fps = fps;
+  Image::Image(m_textures[0]);
+  init(m_textures, m_fps);
 }
 MovieClip::~MovieClip()
 {
@@ -42,4 +43,37 @@ MovieClip::update()
     /// TODO update m_srcRect and m_destRect based on the current texture
 
     /// update x and y based on the parent
+}
+void MovieClip::init(std::vector<SDL_Texture*> textures, float fps = 24)
+{
+  if(fps == 0)
+  {
+    fps = 24;
+    m_fps = fps;
+  }
+  int numFrames = textures.size();
+
+  m_defaultFrameDuration = 1.0 / fps;
+  m_loop = true;
+  m_playing = true;
+  m_currentTime = 0.0f;
+  m_currentFrame = 0;
+  for (var i:int=0; i<numFrames; ++i)
+  {
+      m_durations[i] = m_defaultFrameDuration;
+      m_startTimes[i] = i * m_defaultFrameDuration;
+  }
+}
+void MovieClip::play()
+{
+  m_playing = true;
+}
+void MovieClip::pause()
+{
+  m_playing = false;
+}
+void MovieClip::stop()
+{
+  m_playing = false;
+  m_currentTime = 0;
 }
