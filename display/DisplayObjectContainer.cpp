@@ -1,5 +1,5 @@
 //
-//  DisplayObject.h
+//  DisplayObjectContainer.cpp
 //  author Khaled Garbaya http://khaledgarbaya.net
 //
 //  Copyright (c) 2015 Khaled Garbaya
