@@ -40,6 +40,7 @@ MovieClip::~MovieClip()
 MovieClip::update()
 {
     /// TODO check delta time and update based on the fps provided
+
     /// TODO update m_srcRect and m_destRect based on the current texture
 
     /// update x and y based on the parent
@@ -58,7 +59,7 @@ void MovieClip::init(std::vector<SDL_Texture*> textures, float fps = 24)
   m_playing = true;
   m_currentTime = 0.0f;
   m_currentFrame = 0;
-  for (var i:int=0; i<numFrames; ++i)
+  for (int i = 0; i < numFrames; ++i)
   {
       m_durations[i] = m_defaultFrameDuration;
       m_startTimes[i] = i * m_defaultFrameDuration;
