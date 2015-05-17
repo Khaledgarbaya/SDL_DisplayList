@@ -1,37 +1,9 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# Ignore the build and lib dirs
+build
+lib/*
 
-# Precompiled Headers
-*.gch
-*.pch
+# Ignore any executables
+bin/*
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-#clion project
-*.idea
-*.vcxproj
-*.suo
-*.filters
-*.opensdf
-*.sln
-*.sdf
+# Ignore Mac specific files
+.DS_Store
