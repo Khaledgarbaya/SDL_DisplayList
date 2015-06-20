@@ -40,12 +40,12 @@ void DisplayObjectContainer::addChild(DisplayObject *pChild)
 	auto it = std::find(m_children.begin(), m_children.end(), pChild);
 	if (it == m_children.end())
 	{
-		/// we don't have it yet do we add it as a child
+		/// we don't have it yet, we add it as a child
 		m_children.push_back(pChild);
 	}
 	else
 	{
-		/// otherwise we bring to the front
+		/// otherwise we bring it to the front
 		moveToFront(m_children, it);
 	}
 }

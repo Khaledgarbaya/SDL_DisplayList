@@ -72,7 +72,7 @@ void Rectangle::inflatePoint(const Point &point)
 
 Rectangle Rectangle::intersection(const Rectangle &toIntersect) const 
 {
-    return Rectangle(0, 0, 0, 0);
+    return Rectangle(0, 0, 0, 0);/// TODO implement me
 }
 
 bool Rectangle::isEmpty() 
@@ -107,7 +107,11 @@ void Rectangle::setTo(float x, float y, float width, float height)
 
 std::string Rectangle::toString() 
 {
-    return "[Object] Ractangle";
+    return "[Object] Ractangle  { x : " + this->x + 
+								" y : " + this->y + 
+								" width : " + this->width + 
+								" height : " + this-> height + 
+								" }";
 }
 
 Rectangle *Rectangle::unionWith(const Rectangle &toUnion) 

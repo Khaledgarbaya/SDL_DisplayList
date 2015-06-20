@@ -23,7 +23,6 @@
 #include "Stage.h"
 Stage::Stage(SDL_Renderer *pRenderer) : m_renderer(pRenderer)
 {
-
 }
 
 Stage::~Stage()

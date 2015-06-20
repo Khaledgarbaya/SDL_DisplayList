@@ -1,5 +1,5 @@
 //
-//  DisplayObject.h
+//  Stage.h
 //  author Khaled Garbaya http://khaledgarbaya.net
 //
 //  Copyright (c) 2015 Khaled Garbaya
@@ -31,7 +31,6 @@ class Stage : public DisplayObjectContainer
 public:
 	Stage(SDL_Renderer *pRenderer);
 	~Stage();
-	void addChild(DisplayObject *pChild);
 private:
 	SDL_Renderer *m_renderer;
 };
