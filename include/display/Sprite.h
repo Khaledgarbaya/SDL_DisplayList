@@ -27,10 +27,6 @@
 class Sprite : public DisplayObjectContainer
 {
 	private:
-		SDL_Texture *m_texture;
-		std::string m_textureName;
-		SDL_Rect*   m_srcRect;
-		SDL_Rect*   m_dstRect;
 	public:
 		Sprite();
 		~Sprite();/// Cleanup here

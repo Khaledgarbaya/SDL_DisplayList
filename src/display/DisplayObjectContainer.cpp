@@ -48,6 +48,8 @@ void DisplayObjectContainer::addChild(DisplayObject *pChild)
 		/// otherwise we bring it to the front
 		moveToFront(m_children, it);
 	}
+	/// setting the parent to this
+	it->parent = this;
 }
 void DisplayObjectContainer::addChildAt(DisplayObject *child, int atIndex)
 {
@@ -58,6 +60,7 @@ void DisplayObjectContainer::removeChild(const DisplayObject *child)
 	auto it = std::find(m_children.begin(), m_children.end(), child);
 	if (it != m_children.end())
 	{
+		it->parent = nullptr;
 		m_children.erase(it);
 	}
 }
@@ -65,6 +68,7 @@ void DisplayObjectContainer::removeChildAt(int atIndex)
 {
 	if (atIndex < m_children.size())
 	{
+		it->parent = nullptr;
 		m_children.erase(m_children.begin() + atIndex);
 	}
 }

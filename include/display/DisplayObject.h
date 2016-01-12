@@ -109,7 +109,7 @@ class  DisplayObject
         float m_rotation;
 
 		float m_scaleX, m_scaleY;
-
+    	DisplayObject *m_parent;
         virtual void draw(SDL_Renderer* pRenderer) = 0;
 		virtual void update() = 0;
 		SDL_Rect m_destRect;

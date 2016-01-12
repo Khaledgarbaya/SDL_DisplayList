@@ -50,8 +50,9 @@ void MovieClip::init(std::vector<SDL_Texture*> textures, float fps = 24)
   if(fps == 0)
   {
     fps = 24;
-    m_fps = fps;
   }
+  m_fps = fps;
+  
   int numFrames = textures.size();
 
   m_defaultFrameDuration = 1.0 / fps;
